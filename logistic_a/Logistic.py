@@ -26,7 +26,7 @@ def gradAscent(dataMatIn,classLabels):
         weights = weights + alpha * dataMatrix.transpose() * error
         return weights
 
-'''def plotBestFit(weights):
+def plotBestFit(weights):
     import matplotlib.pyplot as plt
     dataMat,labelMat=loadDataSet()
     dataArr = array(dataMat)
@@ -47,11 +47,11 @@ def gradAscent(dataMatIn,classLabels):
     ax.plot(x, y)
     plt.xlabel('X1'); plt.ylabel('X2');
     plt.show()
-'''
+
 if __name__ == "__main__":
     dataArr,labelMat = loadDataSet()
     print(dataArr)
     print(labelMat)
     weights = gradAscent(dataArr, labelMat)
     print(weights)
-    ##plotBestFit(weights.getA())
+    plotBestFit(weights.getA())
