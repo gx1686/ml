@@ -24,7 +24,7 @@ def gradAscent(dataMatIn,classLabels):
         h = sigmoid(dataMatrix * weights)
         error = (labelMat - h)
         weights = weights + alpha * dataMatrix.transpose() * error
-        return weights
+    return weights
 
 def plotBestFit(weights):
     import matplotlib.pyplot as plt

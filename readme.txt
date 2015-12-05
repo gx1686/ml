@@ -10,3 +10,7 @@ http://blog.csdn.net/zouxy09/article/details/20319673
 相关的：
 从最大似然到EM算法浅解
 http://blog.csdn.net/zouxy09/article/details/8537620
+
+
+
+http://blog.csdn.net/lu597203933/article/details/38468303
