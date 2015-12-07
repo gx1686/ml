@@ -120,7 +120,7 @@ def mysigmoid(inx):
 def myTrain(train_x,train_y):
 	numSamples,numFeatures = shape(train_x)
 	increment = 0.0001
-	weights = ones(numFeatures,1)
+	weights = ones((numFeatures, 1))
 
 	for k in range(numFeatures):
 		result = sigmoid(train_x * weights)
@@ -128,7 +128,6 @@ def myTrain(train_x,train_y):
 		weights = weights + increment * train_x.transpose() * error
 	return weights
 
-#画图
 def drawGraph(weights,train_x,train_y):
 	numSamples,numFeatures = shape(train_x)
 	for i in xrange(numSamples):
@@ -187,6 +186,6 @@ accuracy = testMyTrain(weights, test_x, test_y)
 ## step 4: show the result
 print "step 4: show the result..."
 print 'The classify accuracy is: %.3f%%' % (accuracy * 100)
-showLogRegres(weights, train_x, train_y)
+drawGraph(weights, train_x, train_y)
 
 
