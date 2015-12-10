@@ -31,9 +31,10 @@ def trainLogRegres(train_x, train_y, opts):
 	# optimize through gradient descent algorilthm
 	for k in range(maxIter):
 		if opts['optimizeType'] == 'gradDescent': # gradient descent algorilthm
-			output = sigmoid(train_x * weights)
-			error = train_y - output
-			weights = weights + alpha * train_x.transpose() * error
+			for i in range(numSamples):
+				output = sigmoid(train_x * weights)
+				error = train_y - output
+				weights = weights + alpha * train_x.transpose() * error
 		elif opts['optimizeType'] == 'stocGradDescent': # stochastic gradient descent
 			for i in range(numSamples):
 				output = sigmoid(train_x[i, :] * weights)
@@ -186,6 +187,6 @@ accuracy = testMyTrain(weights, test_x, test_y)
 ## step 4: show the result
 print "step 4: show the result..."
 print 'The classify accuracy is: %.3f%%' % (accuracy * 100)
-drawGraph(weights, train_x, train_y)
+#drawGraph(weights, train_x, train_y)
 
 
